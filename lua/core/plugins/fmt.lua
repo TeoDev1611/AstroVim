@@ -22,6 +22,11 @@ return {
       }
       require('core.util').command('LspFormat', vim.lsp.buf.format)
       vim.lsp.buf.format { timeout_ms = 2000 }
+      vim.api.nvim_create_augroup('__formatter__', { clear = true })
+      vim.api.nvim_create_autocmd('BufWritePost', {
+        group = '__formatter__',
+        command = ':LspFormat',
+      })
     end,
   },
 }

@@ -1,13 +1,14 @@
 return {
   -- ColorSchemes
   {
-    'folke/tokyonight.nvim',
+    'projekt0n/github-nvim-theme',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd 'colo tokyonight-night'
+      vim.cmd('colo github_dark_high_contrast')
     end,
   },
+  'folke/tokyonight.nvim',
   -- Load the other color schemes
   'rafalbromirski/vim-aurora',
   'bluz71/vim-moonfly-colors',
