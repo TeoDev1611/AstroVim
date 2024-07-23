@@ -1,13 +1,10 @@
 return {
   {
-    'vigoux/notifier.nvim',
-    config = true,
-  },
-  {
-    'echasnovski/mini.pairs',
-    config = function()
-      require('mini.pairs').setup {}
-    end,
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {
+      disable_filetype = { 'TelescopePrompt', 'vim' },
+    },
   },
   { 'JoosepAlviste/nvim-ts-context-commentstring' },
   {
@@ -35,4 +32,5 @@ return {
       require('better_escape').setup {}
     end,
   },
+  'gpanders/editorconfig.nvim',
 }

@@ -8,10 +8,12 @@ return {
       'hrsh7th/cmp-path',
       'saadparwaiz1/cmp_luasnip',
       'onsails/lspkind.nvim',
+      'windwp/nvim-autopairs',
     },
     config = function()
       local cmp = require 'cmp'
       local lspkind = require 'lspkind'
+      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
       cmp.setup {
         preselect = cmp.PreselectMode.Item,
         formatting = {
@@ -59,6 +61,7 @@ return {
           },
         },
       }
+      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end,
   },
   -- Snippets
