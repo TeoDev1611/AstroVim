@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd('colo github_dark_high_contrast')
+      vim.cmd 'colo github_dark_high_contrast'
     end,
   },
   'folke/tokyonight.nvim',
@@ -66,65 +66,9 @@ return {
       }
     end,
   },
-  -- Icons
-  'kyazdani42/nvim-web-devicons',
-  -- UI Tools
   {
-    'folke/todo-comments.nvim',
-    cmd = { 'TodoTrouble', 'TodoTelescope' },
-    event = 'BufReadPost',
-  },
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    event = 'BufReadPre',
-    opts = {},
-  },
-  {
-    'akinsho/bufferline.nvim',
-    event = 'BufAdd',
+    'davidmh/mdx.nvim',
     config = true,
-  },
-  {
-    'vigoux/notifier.nvim',
-    config = true,
-  },
-  {
-    'echasnovski/mini.pairs',
-    config = function()
-      require('mini.pairs').setup {}
-    end,
-  },
-
-  -- Comments
-  { 'JoosepAlviste/nvim-ts-context-commentstring' },
-  {
-    'echasnovski/mini.comment',
-    config = function()
-      require('mini.comment').setup {
-        hooks = {
-          pre = function()
-            require('ts_context_commentstring.internal').update_commentstring {}
-          end,
-        },
-      }
-    end,
-  },
-  -- Accelerated JK
-  {
-    'rhysd/accelerated-jk',
-    config = function()
-      vim.cmd [[
-  nmap j <Plug>(accelerated_jk_gj)
-  nmap k <Plug>(accelerated_jk_gk)
-  ]]
-    end,
-  },
-  {
-
-    'max397574/better-escape.nvim',
-    config = function()
-      require('better_escape').setup {}
-    end,
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
 }

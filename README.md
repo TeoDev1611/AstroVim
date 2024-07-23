@@ -2,7 +2,8 @@
 
 ---
 
-This is my personal version _not distro, not issues_ **only for my personal use and as reference for write a new config**
+This is my personal version _not distro, not issues_ **only for my personal use
+and as reference for write a new config**
 
 ---
 

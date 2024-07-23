@@ -13,12 +13,12 @@ return {
       'json-lsp',
       'lua-language-server',
       'marksman',
-      'prettier',
-      'prettierd',
-      'staticcheck',
       'stylua',
       'vim-language-server',
       'deno',
+      'black',
+      'taplo',
+      'rustfmt',
     }
 
     require('mason').setup {

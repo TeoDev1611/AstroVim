@@ -10,7 +10,9 @@ return {
           local peek = require 'peek'
           if peek.is_open() then
             peek.close()
-          else peek.open() end
+          else
+            peek.open()
+          end
         end,
         desc = 'Peek (Markdown Preview)',
       },
@@ -27,6 +29,4 @@ return {
     'lambdalisue/gina.vim',
     cmd = 'Gina',
   },
-  -- Lua Tools
-  { "folke/neodev.nvim", opts = {} }
 }

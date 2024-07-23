@@ -18,3 +18,5 @@ end)
 -- Move lines
 vim.keymap.set('v', '>', [[>gv]])
 vim.keymap.set('v', '<', [[<gv]])
+
+require('core.util').command('LspFormat', vim.lsp.buf.format { async = false })

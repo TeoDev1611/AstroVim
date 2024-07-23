@@ -7,54 +7,15 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'saadparwaiz1/cmp_luasnip',
+      'onsails/lspkind.nvim',
     },
     config = function()
       local cmp = require 'cmp'
+      local lspkind = require 'lspkind'
       cmp.setup {
         preselect = cmp.PreselectMode.Item,
         formatting = {
-          fields = { 'kind', 'abbr', 'menu' },
-          format = function(entry, vim_item)
-            local lspkind_icons = {
-              Text = '',
-              Method = '',
-              Function = '',
-              Constructor = ' ',
-              Field = '',
-              Variable = '',
-              Class = '',
-              Interface = '',
-              Module = '硫',
-              Property = '',
-              Unit = ' ',
-              Value = '',
-              Enum = ' ',
-              Keyword = 'ﱃ',
-              Snippet = ' ',
-              Color = ' ',
-              File = ' ',
-              Reference = 'Ꮢ',
-              Folder = ' ',
-              EnumMember = ' ',
-              Constant = ' ',
-              Struct = ' ',
-              Event = '',
-              Operator = '',
-              TypeParameter = ' ',
-            }
-            local meta_type = vim_item.kind
-            -- load lspkind icons
-            vim_item.kind = lspkind_icons[vim_item.kind] .. ''
-
-            vim_item.menu = ({
-              buffer = ' Buffer',
-              nvim_lsp = meta_type,
-              path = ' Path',
-              luasnip = ' LuaSnip',
-            })[entry.source.name]
-
-            return vim_item
-          end,
+          format = lspkind.cmp_format(),
         },
         mapping = cmp.mapping.preset.insert {
           ['<CR>'] = cmp.mapping.confirm { select = true },
@@ -76,12 +37,12 @@ return {
         },
         window = {
           completion = {
-            border = 'rounded',
+            -- border = 'rounded',
             scrollbar = false,
             winhighlight = 'Normal:CmpPmenu,CursorLine:PmenuSel,Search:None',
           },
           documentation = {
-            border = 'rounded',
+            -- border = 'rounded',
             winhighlight = 'FloatBorder:FloatBorder',
           },
         },
