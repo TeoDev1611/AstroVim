@@ -45,7 +45,6 @@ return {
     event = 'BufReadPre',
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
-      { 'glepnir/lspsaga.nvim', cmd = 'Lspsaga' },
       { 'williamboman/mason-lspconfig.nvim' },
       {
         'lewis6991/hover.nvim',
@@ -96,6 +95,9 @@ return {
         'html',
         'jsonls',
         'vimls',
+        'gleam',
+        'yamlls',
+        'zls',
       }
 
       for _, sv in ipairs(servers) do

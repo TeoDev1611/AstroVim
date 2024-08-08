@@ -29,4 +29,26 @@ return {
     'lambdalisue/gina.vim',
     cmd = 'Gina',
   },
+  -- Gleam Tools
+  {
+    'steven-mathew/gleam-cmp',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    ft = 'toml',
+    config = function()
+      require('gleam-cmp').setup {}
+    end,
+  },
+
+  -- Lsp Tools
+  {
+    'nvimdev/lspsaga.nvim',
+    event = 'LspAttach',
+    config = function()
+      require('lspsaga').setup {}
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
 }

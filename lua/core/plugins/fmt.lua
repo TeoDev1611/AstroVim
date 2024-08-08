@@ -26,6 +26,9 @@ return {
       json = { 'deno_fmt' },
       toml = { 'taplo' },
       go = { 'gofmt', 'goimports', 'gofumpt' },
+      gleam = { 'gleam' },
+      zig = { 'zigfmt' },
+      yaml = { 'yamlfmt' },
     },
     -- Set default options
     default_format_opts = {

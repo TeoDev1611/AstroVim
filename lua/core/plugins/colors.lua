@@ -1,13 +1,24 @@
 return {
   -- ColorSchemes
   {
-    'projekt0n/github-nvim-theme',
+    'ray-x/starry.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd 'colo github_dark_high_contrast'
+      require('starry').setup {
+        border = true,
+        italics = {
+          comments = true,
+        },
+        style = {
+          name = 'middlenight_blue',
+        },
+      }
+      vim.cmd [[colo starry]]
     end,
   },
+  'pineapplegiant/spaceduck',
+  'projekt0n/github-nvim-theme',
   'folke/tokyonight.nvim',
   -- Load the other color schemes
   'rafalbromirski/vim-aurora',

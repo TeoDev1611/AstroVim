@@ -54,6 +54,7 @@ return {
           { name = 'nvim_lua', max_item_count = 18 },
           { name = 'path', max_item_count = 15 },
           { name = 'buffer', keyword_length = 2, max_item_count = 15 },
+          { name = 'gleam', keyword_length = 3 },
         },
         experimental = {
           ghost_text = {
